@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <title>Chào mừng bạn đến với canteen UIT</title>
@@ -54,7 +54,7 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
    <div class="container">
-     <a class="navbar-brand" href="index.html">Canteen UIT</a>
+     <a class="navbar-brand" href="{{URL::to('/trang-chu')}}">Canteen UIT</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="oi oi-menu"></span> Menu
    </button>
@@ -65,15 +65,15 @@
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
-             <a class="dropdown-item" href="shop.html">Menu</a>
-             <a class="dropdown-item" href="cart.html">Giỏ hàng</a>
-             <a class="dropdown-item" href="checkout.html">Thanh toán</a>
+            @foreach($category as $key => $cate)
+             <a class="dropdown-item" href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a>
+            @endforeach
          </div>
      </li>
      <li class="nav-item"><a href="about.html" class="nav-link">Giới thiệu</a></li>
      <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
      <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
-     <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+     <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>Xem giỏ hàng</a></li>
 
  </ul>
 </div>
@@ -144,22 +144,22 @@
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-<script src="public/frontend/js/jquery.min.js"></script>
-<script src="public/frontend/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="public/frontend/js/popper.min.js"></script>
-<script src="public/frontend/js/bootstrap.min.js"></script>
-<script src="public/frontend/js/jquery.easing.1.3.js"></script>
-<script src="public/frontend/js/jquery.waypoints.min.js"></script>
-<script src="public/frontend/js/jquery.stellar.min.js"></script>
-<script src="public/frontend/js/owl.carousel.min.js"></script>
-<script src="public/frontend/js/jquery.magnific-popup.min.js"></script>
-<script src="public/frontend/js/aos.js"></script>
-<script src="public/frontend/js/jquery.animateNumber.min.js"></script>
-<script src="public/frontend/js/bootstrap-datepicker.js"></script>
-<script src="public/frontend/js/scrollax.min.js"></script>
+<script src="{{asset('public/frontend/js/jquery.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/popper.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.stellar.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/aos.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{asset('public/frontend/js/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('public/frontend/js/scrollax.min.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="public/frontend/js/google-map.js"></script>
-<script src="public/frontend/js/main.js"></script>
+<script src="{{asset('public/frontend/js/google-map.js')}}"></script>
+<script src="{{asset('public/frontend/js/main.js')}}"></script>
 
 </body>
 </html>

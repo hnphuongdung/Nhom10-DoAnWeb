@@ -142,16 +142,18 @@
 </div>
 <div class="container">
   <div class="row">
+    {{-- Lấy sản phẩm từ database --}}
+    @foreach($all_product as $key => $product)
      <div class="col-md-6 col-lg-3 ftco-animate">
         <div class="product">
-           <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_sang/banh_mi.png" alt="Colorlib Template">
+           <a href="#" class="img-prod"><img class="img-fluid" src="{{URL::to('public/upload/product/'.$product->product_image)}}" alt="Colorlib Template">
               <div class="overlay"></div>
           </a>
           <div class="text py-3 pb-4 px-3 text-center">
-              <h3><a href="#">Bánh mì</a></h3>
+              <h3><a href="#">{{$product->product_name}}</a></h3>
               <div class="d-flex">
                  <div class="pricing">
-                    <p class="price"><span class="price-sale">10.000 VNĐ</span></p>
+                    <p class="price"><span class="price-sale">{{number_format($product->product_price).' '.'VNĐ'}}</span></p>
                 </div>
             </div>
             <div class="bottom-area d-flex px-3">
@@ -167,184 +169,8 @@
    </div>
 </div>
 </div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="product-single.html" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_sang/banh_uot_thit_nuong.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="product-single.html">Bánh ướt thịt nướng</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>10.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_sang/bun_bo.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Bún Bò</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_sang/bun_mam.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Bún Mắm</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-
-
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_trua/ech_xao_xa_ot.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Ếch xào xả ớt</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span class="price-sale">20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_trua/bo_xao_gia.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Bò xào giá đỗ</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_trua/bo_xao_ot_chuong.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Bò xào ớt chuông</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </div>
-   </div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 ftco-animate">
-    <div class="product">
-       <a href="#" class="img-prod"><img class="img-fluid" src="public/frontend/images/bua_trua/kho_qua_nhoi_thit.jpg" alt="Colorlib Template">
-          <div class="overlay"></div>
-      </a>
-      <div class="text py-3 pb-4 px-3 text-center">
-          <h3><a href="#">Canh khổ qua nhồi thịt</a></h3>
-          <div class="d-flex">
-             <div class="pricing">
-                <p class="price"><span>20.000 VNĐ</span></p>
-            </div>
-        </div>
-        <div class="bottom-area d-flex px-3">
-         <div class="m-auto d-flex">
-            <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-               <span><i class="ion-ios-menu"></i></span>
-           </a>
-           <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-               <span><i class="ion-ios-cart"></i></span>
-           </a>
-       </a>
-   </div>
-</div>
-</div>
-</div>
-</div>
+@endforeach
+{{-- End lấy sản phẩm từ database --}}
 </div>
 </div>
 </section>
