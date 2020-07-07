@@ -44,8 +44,27 @@
                   <span class="text">Canteen@gm.uit.edu.vn</span>
               </div>
               <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                  <a href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
-                  <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
+        
+              <?php
+                $customer_id = Session::get('customer_id');
+                if($customer_id!=NULL){ 
+             ?>
+             <?php
+              $name = Session::get('customer_name');
+              if($name){
+              echo $name;
+              }
+              ?>
+              <a href="{{URL::to('/logout-checkout')}}" class="text">Đăng xuất</a>
+                                
+              <?php
+                }else{
+             ?>
+               <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
+               <a href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
+             <?php 
+               }
+            ?>
               </div>
           </div>
       </div>

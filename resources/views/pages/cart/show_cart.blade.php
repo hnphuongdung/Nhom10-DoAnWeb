@@ -12,59 +12,6 @@
  </div>
 </div>
 
-<!-- <form action="#" class="billing-form">
-            <h3 class="mb-4 billing-heading">Thông tin khách hàng</h3>
-            <div class="row align-items-end">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="firstname">Tên</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="lastname">Họ</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Ghi chú">
-                </div>
-              </div>
-              
-              <div class="w-100"></div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="phone">Số điện thoại</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="emailaddress">Địa chỉ Email</label>
-                  <input type="text" class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="emailaddress">Ghi chú đơn hàng</label>
-                  <textarea type="text" class="form-control" placeholder=""></textarea>
-                </div>
-              </div>
-              <div class="w-100"></div>
-              <div class="col-md-12">
-                <div class="form-group mt-4">
-                  <div class="radio">
-                    <a href="register.html">Tạo tài khoản mới</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form> -->
-
-
 <section class="ftco-section ftco-cart">
  <div class="container">
   <div class="row">
@@ -121,16 +68,52 @@
 </div>
 </div>
 </div>
+<form action="{{URL::to('/save-checkout-customer')}}" method="POST" class="billing-form">
+					{{ csrf_field() }}
+						<h3 class="mb-4 billing-heading">Thông tin khách hàng</h3>
+						<div class="row align-items-end">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="firstname">Họ và tên</label>
+									<input type="text" class="form-control" name="shipping_name" placeholder="">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="lastname">Email</label>
+									<input type="text" class="form-control" name="shipping_email" placeholder="">
+								</div>
+							</div>
+							
+							<div class="w-100"></div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="phone">Số điện thoại</label>
+									<input type="text" class="form-control" name="shipping_phone" placeholder="">
+								</div>
+							</div>
+							
+							<div class="col-md-6">
+								<div class="form-group">
+                <label for="phone">Ghi chú</label>
+									<input type="text" class="form-control" name="shipping_notes" placeholder="">
+								</div>
+							</div>
+							<div class="w-100"></div>
+							<div class="col-md-12">
+								<div class="form-group mt-4">
+									<div class="radio">
+										<a href="{{URL::to('/register-checkout')}}">Tạo tài khoản mới</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
 <div class="row justify-content-end">
  <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-  <div class="cart-total mb-3">
-   <p>Nhập mã giảm giá (nếu có)</p>
-   <!-- <form action="#" class="info">
-     <div class="form-group">
-       <input type="text" class="form-control text-left px-3" placeholder="">
-     </div>
-     <input type="submit" class="btn btn-primary py-3 px-4" value = " Áp dụng mã giảm giá">
-   </form> -->
+  <div>
+   <input style=" width: 348px; height: 68px" type="text" placeholder=" Nhập mã giảm giá (nếu có)">
+  <br><br>
   </div>
  <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Áp dụng mã giảm giá</a></p>
 </div> 
@@ -150,7 +133,18 @@
     <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
   </p>
 </div>
-<p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+<?php
+  $customer_id = Session::get('customer_id');
+  if($customer_id!=NULL){ 
+  ?>
+  <p><a href="{{URL::to('/checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+  <?php
+  }else{
+ ?>
+  <p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+ <?php 
+ }
+ ?>
 </div>
 </div>
 </div>

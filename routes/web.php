@@ -58,4 +58,20 @@ Route::post('/update-cart-quantity','CartController@update_cart_quantity');
 
 //Checkout
 Route::get('/login-checkout','CheckoutController@login_checkout');
+//Route::get('/del-fee','CheckoutController@del_fee');
+Route::post('/order-place','CheckoutController@order_place');
+Route::get('/logout-checkout','CheckoutController@logout_checkout');
 Route::get('/register-checkout','CheckoutController@register_checkout');
+Route::post('/add-customer','CheckoutController@add_customer');
+Route::get('/order-place','CheckoutController@order_place');
+Route::post('/login-customer','CheckoutController@login_customer');
+Route::get('/checkout','CheckoutController@checkout');
+Route::get('/payment','CheckoutController@payment');
+//Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+//Route::post('/calculate-fee','CheckoutController@calculate_fee');
+//Route::post('/select-delivery-home','CheckoutController@select_delivery_home');
+//Route::post('/confirm-order','CheckoutController@confirm_order');
+
+//order
+Route::get('/manage-order','CheckoutController@manage_order');
+Route::get('/view-order/{order_Id}','OrderController@view_order');

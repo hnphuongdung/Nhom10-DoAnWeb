@@ -3,19 +3,20 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form action="{{URL::to('/login-customer')}}" method="POST" class="login100-form validate-form">
+				{{ csrf_field() }}
 					<span class="login100-form-title p-b-43">
 						CHÀO MỪNG BẠN ĐẾN VỚI CANTEEN UIT
 					</span>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Mã số sinh viên" required>
+						<input class="input100" type="text" name="email_account" placeholder="Mã số sinh viên" required>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Mật khẩu" required>
+						<input class="input100" type="password" name="password_account" placeholder="Mật khẩu" required>
 					</div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
