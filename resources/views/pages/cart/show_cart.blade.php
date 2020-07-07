@@ -150,7 +150,11 @@
     <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
   </p>
 </div>
+<<<<<<< HEAD
 <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Xác nhận thanh toán</a></p>
+=======
+<p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+>>>>>>> 8fd4fd1d2593e63bcee396641fdec71b8e06dbca
 </div>
 </div>
 </div>
