@@ -44,8 +44,8 @@
                   <span class="text">Canteen@gm.uit.edu.vn</span>
               </div>
               <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                  <a href="register.html" class="text">Đăng kí</a>
-                  <a href="Login.html" class="text">Đăng nhập</a>
+                  <a href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
+                  <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
               </div>
           </div>
       </div>

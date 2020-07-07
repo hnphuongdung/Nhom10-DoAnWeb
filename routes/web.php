@@ -56,3 +56,4 @@ Route::post('/update-cart-quantity','CartController@update_cart_quantity');
 
 //Checkout
 Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/register-checkout','CheckoutController@register_checkout');
