@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
+use App\Brand;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
@@ -13,11 +14,15 @@ session_start();
 class ProductController extends Controller
 {
     public function add_product(){
-    	$cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+    	 $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        // $this -> AuthLogin();
+         // $cate_product= Brand::all();
     	return view('admin.add_product')->with('cate_product',$cate_product);
     }
     public function all_product(){
-    	$all_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderby('tbl_product.product_id')->get();
+    	$all_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderby('tbl_product.product_id')->paginate(10);
+        //$this -> AuthLogin();
+        //$all_product = Brand::all()->paginate(10); 
     	$manager_product = view('admin.all_product')->with('all_product',$all_product);
     	return view('admin_layout')->with('admin.all_product',$manager_product);
 
