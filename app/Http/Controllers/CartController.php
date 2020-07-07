@@ -42,4 +42,11 @@ class CartController extends Controller
     	Cart::update($rowId, $qty);
     	return Redirect::to('/show-cart');
     }
+
+
+    //coupon
+    public function check_coupon(Request $request){
+        $data = $request->all();
+        print_r($data);
+    }
 }

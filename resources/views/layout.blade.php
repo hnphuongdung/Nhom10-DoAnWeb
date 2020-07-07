@@ -1,10 +1,20 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-    <title>Chào mừng bạn đến với canteen UIT</title>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+     {{-- SEO --}}
+    <meta name="description" content="{{$meta_desc}}"/>
+    <meta name="keywords" content="{{$meta_keywords}}"/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
+    <link  rel="canonical" href="{{$url_canonical}}" />
+    <meta name="author" content="">
+    <link  rel="icon" type="image/x-icon" href="" />
+    <title>{{$meta_title}}</title>
+    {{--End SEO  --}}
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
