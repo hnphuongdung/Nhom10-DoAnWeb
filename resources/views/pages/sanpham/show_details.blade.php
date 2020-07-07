@@ -60,7 +60,8 @@
 <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
 </div>
   <input type="hidden" name="productid_hidden" value="{{$value->product_id}}"> 
-  <button type="submit" class="btn btn-primary btn-black py-3 px-5"><a href="{{URL::to('/save-cart')}}">Thêm vào giỏ hàng</a></button>
+  {{-- <button type="submit" class="btn btn-primary btn-black py-3 px-5"><a href="{{URL::to('/save-cart')}}">Thêm vào giỏ hàng</a></button> --}}
+  <input type="submit" class="btn btn-primary btn-black py-3 px-5" value="Thêm vào giỏ hàng">
 </form>
 </div>
 </div>
