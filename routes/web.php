@@ -48,6 +48,8 @@ Route::get('/unactive-product/{product_id}','ProductController@unactive_product'
 Route::post('/save-product','ProductController@save_product');
 Route::post('/update-product/{product_id}','ProductController@update_product');
 
+//coupon
+Route::post('/check-coupon','CartController@check_coupon');
 //Cart
 Route::post('/save-cart','CartController@save_cart');
 Route::get('/show-cart','CartController@show_cart');

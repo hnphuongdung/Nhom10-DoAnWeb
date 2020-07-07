@@ -27,6 +27,10 @@
                                     <textarea style="resize: none" rows="5" class="form-control" name="category_desc" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputPassword1">Từ khóa danh mục</label>
+                                    <textarea style="resize: none" rows="5" class="form-control" name="category_product_keyword" id="exampleInputPassword1" placeholder="Từ  khóa danh mục"></textarea>
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputPassword1">Trạng thái</label>
                                    <select name="category_status" class="form-control input-sm m-bot15">
                                 <option value="0">Ẩn</option>

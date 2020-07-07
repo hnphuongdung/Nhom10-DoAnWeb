@@ -1604,6 +1604,9 @@ pre {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+  
+
+
   @media screen and (prefers-reduced-motion: reduce) {
     .form-control {
       -webkit-transition: none;
@@ -5667,7 +5670,9 @@ button.bg-dark:focus {
 .align-items-end {
   -webkit-box-align: end !important;
   -ms-flex-align: end !important;
-  align-items: flex-end !important; }
+  align-items: flex-end !important; 
+ 
+}
 
 .align-items-center {
   -webkit-box-align: center !important;
@@ -9014,7 +9019,7 @@ h1, h2, h3, h4, h5,
     appearance: none; }
 
 .billing-form .form-control {
-  font-weight: 300;
+  font-weight: 100px;
   border: transparent !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   height: 58px !important;
@@ -9043,6 +9048,7 @@ h1, h2, h3, h4, h5,
 
 .billing-form textarea.form-control {
   height: inherit !important; }
+
 
 .cart-detail {
   width: 100%;
