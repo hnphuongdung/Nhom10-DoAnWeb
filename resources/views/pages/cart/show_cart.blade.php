@@ -12,7 +12,7 @@
  </div>
 </div>
 
-<form action="#" class="billing-form">
+<!-- <form action="#" class="billing-form">
             <h3 class="mb-4 billing-heading">Thông tin khách hàng</h3>
             <div class="row align-items-end">
               <div class="col-md-6">
@@ -62,7 +62,7 @@
                 </div>
               </div>
             </div>
-          </form>
+          </form> -->
 
 
 <section class="ftco-section ftco-cart">
@@ -125,15 +125,15 @@
  <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
   <div class="cart-total mb-3">
    <p>Nhập mã giảm giá (nếu có)</p>
-   <form action="#" class="info">
+   <!-- <form action="#" class="info">
      <div class="form-group">
        <input type="text" class="form-control text-left px-3" placeholder="">
      </div>
      <input type="submit" class="btn btn-primary py-3 px-4" value = " Áp dụng mã giảm giá">
-   </form>
- {{-- </div>
+   </form> -->
+  </div>
  <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Áp dụng mã giảm giá</a></p>
-</div> --}}
+</div> 
 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
   <div class="cart-total mb-3">
    <p class="d-flex">
@@ -150,11 +150,7 @@
     <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
   </p>
 </div>
-<<<<<<< HEAD
-<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Xác nhận thanh toán</a></p>
-=======
 <p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
->>>>>>> 8fd4fd1d2593e63bcee396641fdec71b8e06dbca
 </div>
 </div>
 </div>
