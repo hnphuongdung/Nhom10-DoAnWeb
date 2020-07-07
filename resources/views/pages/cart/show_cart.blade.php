@@ -96,7 +96,7 @@
     <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
   </p>
 </div>
-<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+<p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
 </div>
 </div>
 </div>

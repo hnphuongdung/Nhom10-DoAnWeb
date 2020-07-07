@@ -53,3 +53,6 @@ Route::post('/save-cart','CartController@save_cart');
 Route::get('/show-cart','CartController@show_cart');
 Route::get('/delete-to-cart/{rowId}','CartController@delete_to_cart');
 Route::post('/update-cart-quantity','CartController@update_cart_quantity');
+
+//Checkout
+Route::get('/login-checkout','CheckoutController@login_checkout');
