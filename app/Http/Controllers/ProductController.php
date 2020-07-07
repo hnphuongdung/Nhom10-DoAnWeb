@@ -116,4 +116,17 @@ class ProductController extends Controller
 
         return view('pages.sanpham.show_details')->with('category', $cate_product)->with('product_details', $details_product)->with('related', $related_product);
     }
+
+
+    public function search_product( Request $request)
+    {
+        $keyword = $request->keyword_submit;
+        $search_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderby('tbl_product.product_id')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
+        //$this -> AuthLogin();
+        //$all_product = Brand::all()->paginate(10); 
+        // $search_product = DB::table('tbl_product')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
+        //$manager_product = view('admin.all_product')->with('all_product',$all_product);
+        // return view('admin.search')->with('admin.all_product',$manager_product);
+        return view('admin.search')->with('search_product',$search_product);
+    }
 }

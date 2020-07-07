@@ -3,14 +3,13 @@
         <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Liệt kê sản phẩm
+      Kết quả tìm kiếm
     </div>
     <div class="row w3-res-tb">
      
       <div class="col-sm-9">
       </div>
-
-      <form method="POST" action="{{URL::to('/search-product')}}" >
+       <form method="POST" action="{{URL::to('/search-product')}}" >
         {{csrf_field()}}
         <div class="col-sm-3">
           <div class="input-group">
@@ -50,7 +49,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($all_product as $key => $pro)
+          @foreach($search_product as $key => $pro)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$pro->product_name}}</td>
@@ -84,7 +83,7 @@
     </div>
     <footer class="panel-footer">
      
-      {{ $all_product->links() }}
+     {{--  {{ $all_product->links() }} --}}
     </footer>
   </div>
 </div>
