@@ -25,6 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="public/backend/js/jquery2.0.3.min.js"></script>
 <script src="public/backend/js/raphael-min.js"></script>
 <script src="public/backend/js/morris.js"></script>
+<script src="https://kit.fontawesome.com/c9801e10cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section id="container">
@@ -97,7 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-book"></i>
+                        {{-- <i class="fa fa-book"></i> --}}
+                        <i class="fab fa-product-hunt"></i>
                         <span>Sản phẩm</span>
                     </a>
                     <ul class="sub">
@@ -106,7 +108,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </li>
                 
-            </ul>            </div>
+                {{-- <li class="sub-menu">
+                    <a href="javascript:;">
+                        {{-- <i class="fa fa-book"></i> --}}
+                       	<i class="fab fa-microblog"></i>
+                        <span>Bài viết</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{URL::to('/')}}">Thêm bài viết</a></li>
+						<li><a href="{{URL::to('/')}}">Danh sách bài viết</a></li>
+                    </ul>
+                </li> --}}
+                
+            </ul>            
+        </div>
         <!-- sidebar menu end-->
     </div>
 </aside>
