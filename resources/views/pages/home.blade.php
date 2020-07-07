@@ -10,7 +10,7 @@
            <div class="col-md-12 ftco-animate text-center">
              <h1 class="mb-2">Chào mừng bạn đến Canteen UIT</h1>
              <h2 class="subheading mb-4">Gọi món nhanh chóng &amp; tiện lợi</h2>
-             <p><a href="shop.html" class="btn btn-primary">Xem chi tiết</a></p>
+             <p><a href="{{URL::to('/danh-muc-san-pham/1')}}" class="btn btn-primary">Xem chi tiết</a></p>
          </div>
 
      </div>
@@ -25,7 +25,7 @@
        <div class="col-sm-12 ftco-animate text-center">
          <h1 class="mb-2">Thân thiện &amp; An toàn</h1>
          <h2 class="subheading mb-4">Gọi món nhanh chóng &amp; tiện lợi</h2>
-         <p><a href="shop.html" class="btn btn-primary">Xem chi tiết</a></p>
+         <p><a href="{{URL::to('/danh-muc-san-pham/1')}}" class="btn btn-primary">Xem chi tiết</a></p>
      </div>
 
  </div>
@@ -95,19 +95,19 @@
                    <div class="text text-center">
                       <h2>Canteen UIT</h2>
                       <p>Đem đến bữa ăn bổ dưỡng và ngon miệng</p>
-                      <p><a href="shop.html" class="btn btn-primary">Gọi món ngay</a></p>
+                      <p><a href="{{URL::to('/danh-muc-san-pham/1')}}" class="btn btn-primary">Gọi món ngay</a></p>
                   </div>
               </div>
           </div>
           <div class="col-md-6">
             <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(public/frontend/images/bg_food/banh_mi.png);">
                <div class="text px-3 py-1">
-                  <h2 class="mb-0"><a href="breakfast.html">Bữa sáng</a></h2>
+                  <h2 class="mb-0"><a href="{{URL::to('/danh-muc-san-pham/1')}}">Bữa sáng</a></h2>
               </div>
           </div>
           <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(public/frontend/images/bg_food/canh_chua_ca_dieu_hong.jpg);">
            <div class="text px-3 py-1">
-              <h2 class="mb-0"><a href="lunch.html">Bữa trưa</a></h2>
+              <h2 class="mb-0"><a href="{{URL::to('/danh-muc-san-pham/2')}}">Bữa trưa</a></h2>
           </div>
       </div>
   </div>
@@ -117,12 +117,12 @@
 <div class="col-md-4">
   <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(public/frontend/images/bg_food/number_1.jpg);">
      <div class="text px-3 py-1">
-        <h2 class="mb-0"><a href="drink.html">Nước uống</a></h2>
+        <h2 class="mb-0"><a href="{{URL::to('/danh-muc-san-pham/5')}}">Nước uống</a></h2>
     </div>    
 </div>
 <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(public/frontend/images/bg_food/sua_chua_nep_cam.jpg);">
  <div class="text px-3 py-1">
-    <h2 class="mb-0"><a href="Snack.html">Đồ ăn vặt</a></h2>
+    <h2 class="mb-0"><a href="{{URL::to('/danh-muc-san-pham/4')}}">Đồ ăn vặt</a></h2>
 </div>
 </div>
 </div>
