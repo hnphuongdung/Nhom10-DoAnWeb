@@ -29,7 +29,6 @@
                                     if($message){
                                     echo '<span class="text-alert">', $message,'</span>';
                                     Session::put('message',null);
-
                                     }
                                     ?>
       <table class="table table-striped b-t b-light">
@@ -83,8 +82,6 @@
       </table>
     </div>
     <footer class="panel-footer">
-     
-      {{ $all_product->links() }}
     </footer>
   </div>
 </div>

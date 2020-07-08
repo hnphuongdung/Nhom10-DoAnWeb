@@ -13,14 +13,22 @@ session_start();
 
 class ProductController extends Controller
 {
+	public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
+
     public function add_product(){
     	 $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
-        // $this -> AuthLogin();
-         // $cate_product= Brand::all();
+        $this -> AuthLogin();
     	return view('admin.add_product')->with('cate_product',$cate_product);
     }
     public function all_product(){
-    	$this->AuthLogin();
+    	
     	$all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
         ->orderby('tbl_product.product_id','desc')->get();
@@ -124,7 +132,7 @@ class ProductController extends Controller
     {
         $keyword = $request->keyword_submit;
         $search_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderby('tbl_product.product_id')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
-        //$this -> AuthLogin();
+        $this -> AuthLogin();
         //$all_product = Brand::all()->paginate(10); 
         // $search_product = DB::table('tbl_product')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
         //$manager_product = view('admin.all_product')->with('all_product',$all_product);

@@ -20,9 +20,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome icons -->
 <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
 </head>
-<body>
+<body style="background-image: url('public/backend/images/bgimage.jpg')">
 <div class="log-w3">
-<div class="w3layouts-main">
+<div class="w3layouts-main" style="background-color:rgba(202,24,31,0.78)">
 	<h2>Đăng nhập</h2>
 	<?php
 	$message = Session::get('message');
@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<span><input type="checkbox" />Nhớ đăng nhập</span>
 			<h6><a href="#">Quên mật khẩu?</a></h6>
 				<div class="clearfix"></div>
-				<input type="submit" value="ĐĂNG NHẬP" name="login">
+				<input style="color: #f4d042" type="submit" value="ĐĂNG NHẬP" name="login">
 		</form>
 		<!-- <p>Chưa có tài khoản?<a href="registration.html">Tạo tài khoản</a></p> -->
 </div>
