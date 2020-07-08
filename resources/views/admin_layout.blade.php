@@ -109,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-book"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                         <span>Đơn hàng</span>
                     </a>
                     <ul class="sub">

@@ -1,19 +1,19 @@
 @extends('admin_layout')
 @section('admin_content')
-        <div class="table-agile-info">
+<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
       Thông tin khách hàng
     </div>
     <div class="table-responsive">
-                                    <?php
-                                    $message = Session::get('message');
-                                    if($message){
-                                    echo '<span class="text-alert">', $message,'</span>';
-                                    Session::put('message',null);
+      <?php
+      $message = Session::get('message');
+      if($message){
+        echo '<span class="text-alert">', $message,'</span>';
+        Session::put('message',null);
 
-                                    }
-                                    ?>
+      }
+      ?>
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
@@ -38,36 +38,23 @@
     <div class="panel-heading">
       Liệt kê chi tiết đơn hàng
     </div>
-    <div class="row w3-res-tb">
-      <div class="col-sm-5 m-b-xs">
-        <button class="btn btn-sm btn-default">Apply</button>                
-      </div>
-      <div class="col-sm-4">
-      </div>
-      <div class="col-sm-3">
-        <div class="input-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-          <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">Go!</button>
-          </span>
-        </div>
-      </div>
-    </div>
+      
+    
     <div class="table-responsive">
-                                    <?php
-                                    $message = Session::get('message');
-                                    if($message){
-                                    echo '<span class="text-alert">', $message,'</span>';
-                                    Session::put('message',null);
+      <?php
+      $message = Session::get('message');
+      if($message){
+        echo '<span class="text-alert">', $message,'</span>';
+        Session::put('message',null);
 
-                                    }
-                                    ?>
+      }
+      ?>
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
             <th style="width:20px;">
               <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
+                <input type="checkbox">
               </label>
             </th>
             <th>Tên sản phẩm</th>
@@ -77,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-     
+
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$order_by_id->product_name}}</td>
@@ -85,7 +72,7 @@
             <td>{{$order_by_id->product_price}}</td>
             <td>{{$order_by_id->product_price*$order_by_id->product_sales_quantity}}</td>
           </tr>
-       
+
         </tbody>
       </table>
     </div>
