@@ -42,7 +42,7 @@ body a:hover{
     width:240px;
     height:100%;
     position:fixed;
-    /*background:rgb(221,221,221);*/
+    background:rgba(52, 48, 48, 0.78);
     -webkit-transition:all .3s ease-in-out;
     -moz-transition:all .3s ease-in-out;
     -o-transition:all .3s ease-in-out;
