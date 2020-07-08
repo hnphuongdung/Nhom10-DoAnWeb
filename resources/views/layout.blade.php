@@ -48,20 +48,15 @@
               <?php
                 $customer_id = Session::get('customer_id');
                 if($customer_id!=NULL){ 
+                  
              ?>
-             <?php
-              $name = Session::get('customer_name');
-              if($name){
-              echo $name;
-              }
-              ?>
               <a href="{{URL::to('/logout-checkout')}}" class="text">Đăng xuất</a>
                                 
               <?php
                 }else{
              ?>
-               <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
                <a href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
+               <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
              <?php 
                }
             ?>
@@ -176,7 +171,6 @@
 <script src="{{asset('public/frontend/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('public/frontend/js/scrollax.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{asset('public/frontend/js/google-map.js')}}"></script>
 <script src="{{asset('public/frontend/js/main.js')}}"></script>
 

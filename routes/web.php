@@ -47,6 +47,7 @@ Route::get('/active-product/{product_id}','ProductController@active_product');
 Route::get('/unactive-product/{product_id}','ProductController@unactive_product');
 Route::post('/save-product','ProductController@save_product');
 Route::post('/update-product/{product_id}','ProductController@update_product');
+Route::post('/search-product','ProductController@search_product');
 
 //coupon
 Route::post('/check-coupon','CartController@check_coupon');
@@ -66,12 +67,11 @@ Route::post('/add-customer','CheckoutController@add_customer');
 Route::get('/order-place','CheckoutController@order_place');
 Route::post('/login-customer','CheckoutController@login_customer');
 Route::get('/checkout','CheckoutController@checkout');
-Route::get('/payment','CheckoutController@payment');
-//Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+
 //Route::post('/calculate-fee','CheckoutController@calculate_fee');
 //Route::post('/select-delivery-home','CheckoutController@select_delivery_home');
 //Route::post('/confirm-order','CheckoutController@confirm_order');
 
 //order
 Route::get('/manage-order','CheckoutController@manage_order');
-Route::get('/view-order/{order_Id}','OrderController@view_order');
+Route::get('/view-order/{order_Id}','CheckoutController@view_order');

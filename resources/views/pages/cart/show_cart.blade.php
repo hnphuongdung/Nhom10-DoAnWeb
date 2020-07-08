@@ -68,7 +68,7 @@
 </div>
 </div>
 </div>
-<form action="{{URL::to('/save-checkout-customer')}}" method="POST" class="billing-form">
+<form class="billing-form">
 					{{ csrf_field() }}
 						<h3 class="mb-4 billing-heading">Thông tin khách hàng</h3>
 						<div class="row align-items-end">
@@ -76,6 +76,21 @@
 								<div class="form-group">
 									<label for="firstname">Họ và tên</label>
 									<input type="text" class="form-control" name="shipping_name" placeholder="">
+
+                  <!-- <?php
+                  $customer_id = Session::get('customer_id');
+                  if($customer_id!=NULL){ 
+                   ?>
+                   <?php
+                    $customer_name = Session::get('customer_name');
+                    echo $customer_name;
+                  }else{
+                  ?>
+                  <input type="text" class="form-control" name="shipping_name" placeholder="">
+                  <?php 
+                  }
+                  ?> -->
+                  
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -115,7 +130,7 @@
    <input style=" width: 348px; height: 68px" type="text" placeholder=" Nhập mã giảm giá (nếu có)">
   <br><br>
   </div>
- <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Áp dụng mã giảm giá</a></p>
+ <p><a href="#" class="btn btn-primary py-3 px-4">Áp dụng mã giảm giá</a></p>
 </div> 
 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
   <div class="cart-total mb-3">

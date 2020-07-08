@@ -25,6 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="public/backend/js/jquery2.0.3.min.js"></script>
 <script src="public/backend/js/raphael-min.js"></script>
 <script src="public/backend/js/morris.js"></script>
+<script src="https://kit.fontawesome.com/c9801e10cc.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section id="container">
@@ -32,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
+    <a href="{{URL::to('/dashboard')}}" class="logo">
         ADMIN
     </a>
     <div class="sidebar-toggle-box">
@@ -44,20 +45,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
+        
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="{{asset('public/backend/images/2.png')}}">
                 <span class="username">
                     <?php
-    $name = Session::get('admin_name');
-    if($name){
-    echo $name;
-}
-    ?>
+                    $name = Session::get('admin_name');
+                    if($name){
+                    echo $name;
+                    }
+                    ?>
                 </span>
                 <b class="caret"></b>
             </a>
@@ -99,7 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-book"></i>
+                        {{-- <i class="fa fa-book"></i> --}}
+                        <i class="fab fa-product-hunt"></i>
                         <span>Sản phẩm</span>
                     </a>
                     <ul class="sub">

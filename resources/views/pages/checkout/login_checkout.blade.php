@@ -9,6 +9,14 @@
 						CHÀO MỪNG BẠN ĐẾN VỚI CANTEEN UIT
 					</span>
 					
+					<?php
+						$message = Session::get('message');
+						if($message){
+						echo '<span class="text-alert">', $message,'</span>';
+						Session::put('message',null);
+
+						}
+					?>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email_account" placeholder="Mã số sinh viên" required>
