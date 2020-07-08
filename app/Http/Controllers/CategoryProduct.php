@@ -71,14 +71,14 @@ class CategoryProduct extends Controller
         $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
 
         $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')->where('tbl_product.category_id', $category_id)->get();
-        foreach ($category_by_id as $key => $val ) {
+        // foreach ($category_by_id as $key => $val ) {
             // --SEO
-            $meta_desc = $val->category_desc;
-            $meta_keywords = $val->meta_keywords;
-            $meta_title = $val->category_name;
-            $url_canonical = $request->url();
+            // $meta_desc = $val->category_desc;
+            // $meta_keywords = $val->meta_keywords;
+            // $meta_title = $val->category_name;
+            // $url_canonical = $request->url();
         // --End SEO
-        }
-       return view('pages.category.show_category')->with('category', $cate_product)->with('category_by_id', $category_by_id)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
-    }
+        // }
+       return view('pages.category.show_category')->with('category', $cate_product)->with('category_by_id', $category_by_id);
+}
 }

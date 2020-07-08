@@ -40,6 +40,7 @@ class ProductController extends Controller
     public function save_product(Request $request){
     	$data = array();
     	$data['product_name']=$request->product_name;
+        $data['product_quantity']=$request->product_quantity;
     	$data['product_desc']=$request->product_desc;
     	$data['product_status']=$request->product_status;
     	$data['product_price']=$request->product_price;
@@ -84,6 +85,7 @@ class ProductController extends Controller
     public function update_product(Request $request,$product_id){
     	$data = array();
     	$data['product_name']=$request->product_name;
+        $data['product_quantity']=$request->product_quantity;
     	$data['product_price']=$request->product_price;
     	$data['product_promotion_price']=$request->product_promotion_price;
     	$data['product_desc']=$request->product_desc;
