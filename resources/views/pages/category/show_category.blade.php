@@ -39,12 +39,15 @@
             </div>
             <div class="bottom-area d-flex px-3">
              <div class="m-auto d-flex">
-                <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+              <form action="{{URL::to('/save-cart')}}" method="POST">
+              {{csrf_field()}}
+                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                    <span><i class="ion-ios-menu"></i></span>
                </a>
-               <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                   <span><i class="ion-ios-cart"></i></span>
-               </a>
+               <input type="hidden" id="quantity" name="quantity" value="1">
+               <input type="hidden" name="productid_hidden" value="{{$product->product_id}}"> 
+                <i class="ion-ios-cart"></i><input type="submit" class="buy-now d-flex justify-content-center align-items-center mx-1">
+               </form>
            </div>
        </div>
    </div>
