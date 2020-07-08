@@ -32,6 +32,7 @@ class ProductController extends Controller
     public function save_product(Request $request){
     	$data = array();
     	$data['product_name']=$request->product_name;
+        $data['product_quantity']=$request->product_quantity;
     	$data['product_desc']=$request->product_desc;
     	$data['product_status']=$request->product_status;
     	$data['product_price']=$request->product_price;
@@ -76,6 +77,7 @@ class ProductController extends Controller
     public function update_product(Request $request,$product_id){
     	$data = array();
     	$data['product_name']=$request->product_name;
+        $data['product_quantity']=$request->product_quantity;
     	$data['product_price']=$request->product_price;
     	$data['product_promotion_price']=$request->product_promotion_price;
     	$data['product_desc']=$request->product_desc;
@@ -124,11 +126,11 @@ class ProductController extends Controller
     {
         $keyword = $request->keyword_submit;
         $search_product = DB::table('tbl_product')->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')->orderby('tbl_product.product_id')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
-        //$this -> AuthLogin();
-        //$all_product = Brand::all()->paginate(10); 
-        // $search_product = DB::table('tbl_product')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
-        //$manager_product = view('admin.all_product')->with('all_product',$all_product);
-        // return view('admin.search')->with('admin.all_product',$manager_product);
+        // $this -> AuthLogin();
+        $all_product = Brand::all()->paginate(10); 
+         $search_product = DB::table('tbl_product')->where('product_name' , 'like' , '%'. $keyword.'%') ->get();
+        $manager_product = view('admin.all_product')->with('all_product',$all_product);
+         //return view('admin.search')->with('admin.all_product',$manager_product);
         return view('admin.search')->with('search_product',$search_product);
     }
 }

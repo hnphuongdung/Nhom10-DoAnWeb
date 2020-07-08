@@ -41,6 +41,7 @@
               </label>
             </th>
             <th>Tên sản phẩm</th>
+            <th>Số lượng sản phẩm</th>
             <th>Giá</th>
             <th>Giá KM</th>
             <th>Hình sản phẩm</th>
@@ -54,6 +55,7 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$pro->product_name}}</td>
+            <td>{{$pro->product_quantity}}</td>
             <td>{{$pro->product_price}}</td>
             <td>{{$pro->product_promotion_price}}</td>
             <td><img src="public/upload/product/{{$pro->product_image}}" height="80" width="80"></td>

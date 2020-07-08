@@ -24,6 +24,10 @@
                                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" value="{{$pro->product_name}}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Số lượng sản phẩm</label>
+                                    <input type="text" name="product_quantity" class="form-control" id="exampleInputEmail1" value="{{$pro->product_quantity}}">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
                                     <input type="file" name="product_image" class="form-control" id="exampleInputEmail1">
                                     <img src="{{URL::to('public/upload/product/'.$pro->product_image)}}" height="80" width="80">
