@@ -75,28 +75,21 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="firstname">Họ và tên</label>
-									<input type="text" class="form-control" name="shipping_name" placeholder="">
-
-                  <!-- <?php
+									
+                  <?php
                   $customer_id = Session::get('customer_id');
+                  $username="";
                   if($customer_id!=NULL){ 
-                   ?>
-                   <?php
-                    $customer_name = Session::get('customer_name');
-                    echo $customer_name;
-                  }else{
-                  ?>
-                  <input type="text" class="form-control" name="shipping_name" placeholder="">
-                  <?php 
+                     $username = DB::table('tbl_customers')->where('customer_id', $customer_id)->get()[0]->customer_name;
                   }
-                  ?> -->
-                  
+                  ?>
+                  <input type="text" class="form-control" name="shipping_name" placeholder="" value="<?php echo $username; ?>">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="lastname">Email</label>
-									<input type="text" class="form-control" name="shipping_email" placeholder="">
+									<input type="text" class="form-control" name="shipping_email" placeholder="" >
 								</div>
 							</div>
 							

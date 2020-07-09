@@ -48,7 +48,7 @@
               <?php
                 $customer_id = Session::get('customer_id');
                 if($customer_id!=NULL){ 
-                  
+                  echo DB::table('tbl_customers')->where('customer_id', $customer_id)->get()[0]->customer_name;
              ?>
               <a href="{{URL::to('/logout-checkout')}}" class="text">Đăng xuất</a>
                                 
