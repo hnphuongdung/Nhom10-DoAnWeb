@@ -58,6 +58,7 @@
               </label>
             </th>
             <th>Tên sản phẩm</th>
+            <th>Số lượng kho</th>
             <th>Số lượng</th>
             <th>Đơn giá</th>
             <th>Thành tiền</th>
@@ -68,11 +69,23 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$order_by_id->product_name}}</td>
-            <td>{{$order_by_id->product_sales_quantity}}</td>
+            <td>{{$order_by_id->product_quantity}}</td> 
+            <td><input type="number" min="1" value="{{$order_by_id->product_sales_quantity}}" name="product_sales_quantity">
+            <button type="submit" name="update_sales_quantity" class="btn btn-info">Cập nhật số lượng</button>
+          </td>
             <td>{{$order_by_id->product_price}}</td>
             <td>{{$order_by_id->product_price*$order_by_id->product_sales_quantity}}</td>
           </tr>
-
+          
+          <tr>
+            <td>
+              <select class="form_control">
+                <option value="Đang chờ xử lý">Đang chờ xử lý</option>
+                <option value="Đã xử lý">Đã xử lý</option>
+                <option value="Đã hủy hàng">Hủy đơn hàng</option>
+              </select>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
