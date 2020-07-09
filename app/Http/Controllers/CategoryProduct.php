@@ -49,7 +49,7 @@ class CategoryProduct extends Controller
     public function update_category_product(Request $request,$category_product_id){
     	$data = array();
     	$data['category_name']=$request->category_name;
-        $data['meta_keyword']=$request->category_product_keyword;
+        $data['meta_keywords']=$request->category_product_keyword;
     	$data['category_desc']=$request->category_desc;
     	DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);
     	Session::put('message','Cập nhật danh mục sản phẩm thành công');
