@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
+use App\coupon;
 session_start();
 
 class CartController extends Controller
@@ -47,6 +48,41 @@ class CartController extends Controller
     //coupon
     public function check_coupon(Request $request){
         $data = $request->all();
-        print_r($data);
+        $coupon = coupon::where('coupon_code',$data['coupon'])->first();
+        if($coupon){
+            $count_coupon = $coupon->count();
+            if($count_coupon>0){
+                $coupon_session= Session::get('coupon');
+                if($coupon_session==true){
+                    $is_avaiable=0;
+                    if($is_avaiable==0){
+                        $cou[]= array(
+                            'coupon_code'=>$coupon->coupon_code,
+                            'coupon_condition'=>$coupon->coupon_condition,
+                            'coupon_numbers'=>$coupon->coupon_numbers
+
+                        );
+                        Session::put('coupon',$cou);
+
+                    }
+                } else {
+                    $cou[]= array(
+                            'coupon_code'=>$coupon->coupon_code,
+                            'coupon_condition'=>$coupon->coupon_condition,
+                            'coupon_numbers'=>$coupon->coupon_numbers
+
+                        );
+                    Session::put('coupon',$cou);
+                }
+                Session::save();
+                return Redirect()->back()->with('message','Thêm mã giảm giá thành công');
+
+            }
+        
+        }else {
+            return Redirect()->back()->with('message','Mã giảm giá không đúng');
+
+        }
+
     }
 }

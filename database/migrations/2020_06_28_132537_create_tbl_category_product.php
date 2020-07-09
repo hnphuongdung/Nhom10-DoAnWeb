@@ -17,6 +17,7 @@ class CreateTblCategoryProduct extends Migration
             $table->Increments('category_id');
             $table->string('category_name');
             $table->text('category_desc')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->integer('category_status');
             $table->timestamps();
         });
