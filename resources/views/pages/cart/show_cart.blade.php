@@ -68,7 +68,7 @@
 </div>
 </div>
 </div>
-<form class="billing-form">
+      <form class="billing-form">
 					{{ csrf_field() }}
 						<h3 class="mb-4 billing-heading">Thông tin khách hàng</h3>
 						<div class="row align-items-end">
@@ -125,38 +125,113 @@
 						</div>
 					</form>
 <div class="row justify-content-end">
- <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-  <div>
-   <input style=" width: 348px; height: 68px" type="text" placeholder=" Nhập mã giảm giá (nếu có)">
-  <br><br>
-  </div>
- <p><a href="#" class="btn btn-primary py-3 px-4">Áp dụng mã giảm giá</a></p>
+
+  <form action="{{URL::to('/check-coupon')}}" method="POST">
+     @csrf
+    <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+      <input style=" width: 348px; height: 68px" type="text" placeholder=" Nhập mã giảm giá (nếu có)"name ="coupon">
+      <br><br>
+    <input type="submit" name=""class="btn btn-primary py-3 px-4" value="Áp dụng mã giảm giá" name="check-coupon"> 
+  </form>
+
 </div> 
+
+<?php
+  $message = Session::get('message');
+  if($message){
+    echo '<span class="text-alert">', $message,'</span>';
+    Session::put('message',null);
+
+}
+?>
+
+
+
 <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
   <div class="cart-total mb-3">
    <p class="d-flex">
     <span>Tạm tính</span>
     <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
+    
   </p>
+
   <p class="d-flex">
-    <span>Giảm giá</span>
-    <span>{{Cart::discount().' '.'VNĐ'}}</span>
-  </p>
-  <hr>
-  <p class="d-flex total-price">
-    <span>Thành tiền</span>
-    <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
-  </p>
+    
+    @if(Session::get('coupon'))
+      <span>Mã giảm</span>
+        @foreach(Session::get('coupon') as $key =>$cou)
+          @if($cou['coupon_condition']==1)
+            @php 
+            echo '<span>'.$cou['coupon_numbers'].'%</span> </p>'; 
+            echo '<p class="d-flex">
+                  <span>Tổng giảm</span>';
+            $total =(int)Cart::subtotal() *1000;
+
+            $coupon_numbers = (int)$cou['coupon_numbers'];
+            (int)$total_coupon = $total*$coupon_numbers/100;
+            echo '<span>'.$total_coupon.' VNĐ </span>';
+
+            echo' <hr><p class="d-flex total-price">
+            <span>Thành tiền</span>';
+            (int)$result = $total - $total_coupon;
+            echo '<span>'.$result.' VNĐ </span> </p>' ;
+            @endphp
+          @else 
+            @php 
+            echo '<span>'.$cou['coupon_numbers'].' VNĐ</span> </p>'; 
+            // echo '<p class="d-flex">
+            //       <span>Tổng giảm</span>';
+            $total =(int)Cart::subtotal() *1000;
+
+            $coupon_numbers = (int)$cou['coupon_numbers'];
+            // (int)$total_coupon = $total-$coupon_numbers/100;
+            //echo '<span>'.$total_coupon.' VNĐ </span>';
+
+            echo' <hr><p class="d-flex total-price">
+            <span>Thành tiền</span>';
+            (int)$result = $total - $coupon_numbers;
+            echo '<span>'.$result.' VNĐ </span> </p>' ;
+            @endphp
+
+
+          @endif
+        @endforeach
+    @else
+      <p class="d-flex">
+        <span>Giảm giá</span>
+        <span>{{Cart::discount().' '.'VNĐ'}}</span>
+      </p>
+      <hr>
+      <p class="d-flex total-price">
+        <span>Thành tiền</span>
+        <span>{{Cart::subtotal().' '.'VNĐ'}}</span>
+      </p>
 </div>
+  
+  @endif
+
 <?php
   $customer_id = Session::get('customer_id');
   if($customer_id!=NULL){ 
   ?>
-  <p><a href="{{URL::to('/checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+  <p>
+    <a href="{{URL::to('/checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a>
+    @if(Session::get('coupon'))
+      <br><br>
+    
+      <a href="{{URL::to('/unset-coupon')}}" class="btn btn-primary py-3 px-4">Xóa mã khuyến mãi</a>
+    @endif
+  </p>
   <?php
   }else{
  ?>
-  <p><a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a></p>
+  <p>
+    <a href="{{URL::to('/login-checkout')}}" class="btn btn-primary py-3 px-4">Tiến hành thanh toán</a>
+    @if(Session::get('coupon'))
+      <br><br>
+      <a href="{{URL::to('/unset-coupon')}}" class="btn btn-primary py-3 px-4">Xóa mã khuyến mãi</a>
+    @endif
+  </p>
  <?php 
  }
  ?>

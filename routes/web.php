@@ -51,6 +51,13 @@ Route::post('/search-product','ProductController@search_product');
 
 //coupon
 Route::post('/check-coupon','CartController@check_coupon');
+Route::get('/unset-coupon','CouponController@unset_coupon');
+
+
+Route::get('/insert-coupon','CouponController@insert_coupon');
+Route::get('/list-coupon','CouponController@list_coupon');
+Route::get('/delete-coupon/{coupon_id}','CouponController@delete_coupon');
+Route::post('/insert-coupon-code','CouponController@insert_coupon_code');
 //Cart
 Route::post('/save-cart','CartController@save_cart');
 Route::get('/show-cart','CartController@show_cart');
