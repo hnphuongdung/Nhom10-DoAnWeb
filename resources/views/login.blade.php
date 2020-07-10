@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title> Đăng nhập canteen UIT</title>
+	<title>Chào mừng bạn đến với canteen UIT</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -30,7 +30,7 @@
 <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <link rel="stylesheet" href="{{asset('public/frontend/css/open-iconic-bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/animate.css')}}">
 
@@ -65,10 +65,26 @@
         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
         <span class="text">Canteen@gm.uit.edu.vn</span>
       </div>
-      <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-        <a style="font-size: 11px" href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
-        <a style="font-size: 11px" href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
-      </div>
+      <div style="color: #ccab07; padding-left: 15px; margin-left: 100px;" class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+
+        <?php
+        $customer_id = Session::get('customer_id');
+         $customername="";
+        if($customer_id!=NULL){ 
+           $customername = DB::table('tbl_customers')->where('customer_id', $customer_id)->get()[0]->customer_name;
+          ?>
+          <i class="fas fa-user"></i>
+          <?php echo $customername; ?>
+          <a style="width: 100px" href="{{URL::to('/logout-checkout')}}" class="text">| Đăng xuất</a>
+          <?php
+        }else{
+         ?>
+         <a href="{{URL::to('/register-checkout')}}" class="text">Đăng kí</a>
+         <a href="{{URL::to('/login-checkout')}}" class="text">Đăng nhập</a>
+         <?php 
+       }
+       ?>
+     </div>
     </div>
   </div>
 </div>
@@ -92,9 +108,9 @@
             @endforeach
          </div>
      </li>
-     <li class="nav-item"><a href="about.html" class="nav-link">Giới thiệu</a></li>
-     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
+     <li class="nav-item"><a href="{{URL::to('/gioi-thieu')}}" class="nav-link">Giới thiệu</a></li>
+     <li class="nav-item"><a href="{{URL::to('/blog')}}" class="nav-link">Blog</a></li>
+     <li class="nav-item"><a href="{{URL::to('/ket-noi')}}" class="nav-link">Liên hệ</a></li>
      <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>Xem giỏ hàng</a></li>
 
  </ul>
@@ -137,7 +153,7 @@
  <div class="row mb-5">
   <div class="col-md">
     <div class="ftco-footer-widget mb-4">
-      <h2><a href="index.html" class="ftco-heading-2">Canteen UIT</a></h2>
+      <h2><a href="{{URL::to('/trang-chu')}}" class="ftco-heading-2">Canteen UIT</a></h2>
       <p>Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!</p>
       <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -149,9 +165,9 @@
     <div class="ftco-footer-widget mb-4 ml-md-5">
       <h2 class="ftco-heading-2">Tất cả</h2>
       <ul class="list-unstyled">
-        <li><a href="shop.html" class="py-2 d-block">Menu</a></li>
-        <li><a href="about.html" class="py-2 d-block">Giới thiệu</a></li>
-        <li><a href="contact.html" class="py-2 d-block">Liên hệ</a></li>
+        <li><a href="{{URL::to('/danh-muc-san-pham/1')}}" class="py-2 d-block">Menu</a></li>
+        <li><a href="{{URL::to('/gioi-thieu')}}" class="py-2 d-block">Giới thiệu</a></li>
+        <li><a href="{{URL::to('/ket-noi')}}" class="py-2 d-block">Liên hệ</a></li>
       </ul>
     </div>
   </div>
@@ -160,9 +176,8 @@
     <h2 class="ftco-heading-2">Hỗ trợ</h2>
     <div class="d-flex">
      <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-       <li><a href="" class="py-2 d-block">Cách thức đặt hàng</a></li>
-       <li><a href="dieukhoan.html" class="py-2 d-block">Điều khoản &amp; Điều kiện</a></li>
-       <li><a href="quyenriengtu.html" class="py-2 d-block">Quyền riêng tư</a></li>
+       <li><a href="{{URL::to('/dieu-khoan')}}" class="py-2 d-block">Điều khoản &amp; Điều kiện</a></li>
+       <li><a href="{{URL::to('/quyen-rieng-tu')}}" class="py-2 d-block">Quyền riêng tư</a></li>
      </ul>
    </div>
  </div>

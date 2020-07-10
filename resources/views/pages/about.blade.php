@@ -1,10 +1,10 @@
-@extends('layout')
-@section('content')
+@extends('show')
+@section('show')
 <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
  <div class="container">
   <div class="row">
-   <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/bg_about.jpg);">
-    <a href="videos/tong_quan_UIT.mp4" class="icon popup-vimeo d-flex justify-content-center align-items-center">
+   <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('public/frontend/images/bg_about.jpg')}});">
+    <a href="https://www.uit.edu.vn/sites/vi/files/uploads/files/videos/tong_quan_UIT.mp4" class="icon popup-vimeo d-flex justify-content-center align-items-center">
      <span class="icon-play"></span>
    </a>
  </div>
@@ -17,7 +17,7 @@
   <div class="pb-md-5">
     <p>Chúng tôi luôn mang đến cho các bạn những món ăn ngon chuẩn cơm mẹ nấu, được chuẩn bị từ nguyên liệu sạch và an toàn, đảm bảo các yêu  cầu về vệ sinh an toàn thực phẩm.</p>
 
-    <p><a href="shop.html" class="btn btn-primary">MENU</a></p>
+    <p><a href="{{URL::to('/danh-muc-san-pham/1')}}" class="btn btn-primary">MENU</a></p>
   </div>
 </div>
 </div>

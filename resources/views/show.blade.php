@@ -1,17 +1,38 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Chào mừng bạn đến với canteen UIT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chào mừng bạn đến với canteen UIT</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<link rel="icon" type="image/png" href="{{asset('public/frontend/login/images/icons/favicon.ico')}}"/>
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/bootstrap/css/bootstrap.min.css')}}">
 
-  <link rel="stylesheet" href="{{asset('public/frontend/css/open-iconic-bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('public/frontend/css/animate.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/animate/animate.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/css-hamburgers/hamburgers.min.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/animsition/css/animsition.min.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/select2/select2.min.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/vendor/daterangepicker/daterangepicker.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/css/util.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('public/frontend/login/css/main.css')}}">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" href="{{asset('public/frontend/css/open-iconic-bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/animate.css')}}">
 
   <link rel="stylesheet" href="{{asset('public/frontend/css/owl.carousel.min.css')}}">
   <link rel="stylesheet" href="{{asset('public/frontend/css/owl.theme.default.min.css')}}">
@@ -24,10 +45,10 @@
   <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap-datepicker.css')}}">
   <link rel="stylesheet" href="{{asset('public/frontend/css/jquery.timepicker.css')}}">
 
-
   <link rel="stylesheet" href="{{asset('public/frontend/css/flaticon.css')}}">
   <link rel="stylesheet" href="{{asset('public/frontend/css/icomoon.css')}}">
   <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
+
 </head>
 
 <body class="goto-here">
@@ -64,40 +85,60 @@
        }
        ?>
      </div>
-   </div>
- </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
- <div class="container">
-   <a class="navbar-brand" href="{{URL::to('/trang-chu')}}">Canteen UIT</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="oi oi-menu"></span> Menu
+   <div class="container">
+     <a class="navbar-brand" href="{{URL::to('/trang-chu')}}">Canteen UIT</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="oi oi-menu"></span> Menu
    </button>
 
    <div class="collapse navbar-collapse" id="ftco-nav">
-     <ul class="navbar-nav ml-auto">
-       <li class="nav-item active"><a href="{{URL::to('/trang-chu')}}" class="nav-link">Trang chủ</a></li>
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown04">
-          @foreach($category as $key => $cate)
-          <a class="dropdown-item" href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a>
-          @endforeach
-        </div>
-      </li>
-      <li class="nav-item"><a href="{{URL::to('/gioi-thieu')}}" class="nav-link">Giới thiệu</a></li>
-      <li class="nav-item"><a href="{{URL::to('/blog')}}" class="nav-link">Blog</a></li>
-      <li class="nav-item"><a href="{{URL::to('/ket-noi')}}" class="nav-link">Liên hệ</a></li>
-      <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>Xem giỏ hàng</a></li>
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item active"><a href="{{URL::to('/trang-chu')}}" class="nav-link">Trang chủ</a></li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown04">
+         
+         </div>
+     </li>
+     <li class="nav-item"><a href="{{URL::to('/gioi-thieu')}}" class="nav-link">Giới thiệu</a></li>
+     <li class="nav-item"><a href="{{URL::to('/blog')}}" class="nav-link">Blog</a></li>
+     <li class="nav-item"><a href="{{URL::to('/ket-noi')}}" class="nav-link">Liên hệ</a></li>
+     <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>Xem giỏ hàng</a></li>
 
-    </ul>
-  </div>
+ </ul>
+</div>
 </div>
 </nav>
-<!-- END nav -->
-@yield('content')
+
+<div>
+	@yield('show')
+</div>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
+  <div class="container py-4">
+    <div class="row d-flex justify-content-center py-5">
+      <div class="col-md-6">
+       <h2 style="font-size: 22px;" class="mb-0">Đăng ký</h2>
+       <span>Nhận email về các món ăn và khuyến mãi mới nhất</span>
+     </div>
+     <div class="col-md-6 d-flex align-items-center">
+      <form action="#" class="subscribe-form">
+        <div class="form-group d-flex">
+          <input type="text" class="form-control" placeholder="Nhập email của bạn">
+          <input type="submit" value="Subscribe" class="submit px-3">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
 <footer class="ftco-footer ftco-section">
   <div class="container">
    <div class="row">
@@ -173,7 +214,7 @@
 <script src="{{asset('public/frontend/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('public/frontend/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('public/frontend/js/scrollax.min.js')}}"></script>
-<script src="{{asset('public/frontend/js/google-map.js')}}"></script>
+<!-- <script src="{{asset('public/frontend/js/google-map.js')}}"></script> -->
 <script src="{{asset('public/frontend/js/main.js')}}"></script>
 
 </body>

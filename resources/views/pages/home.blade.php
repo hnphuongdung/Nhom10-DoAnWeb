@@ -185,7 +185,7 @@
          <span class="subheading">Giá tốt cho bạn</span>
          <h2 class="mb-4">Combo tiết kiệm</h2>
          <p>Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!</p>
-         <h3><a href="combo.html">Chỉ từ 25.000VND</a></h3>
+         <h3><a href="{{URL::to('/danh-muc-san-pham/3')}}">Chỉ từ 25.000VND</a></h3>
          {{-- <span class="price">25.000 VNĐ</span> --}}
          {{-- <div id="timer" class="d-flex mt-5">
             <div class="time" id="days"></div>

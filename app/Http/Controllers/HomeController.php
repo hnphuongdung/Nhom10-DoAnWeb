@@ -29,5 +29,25 @@ class HomeController extends Controller
     //giới thiệu
     public function about() {
         return view('pages.about');
-    }
+	}
+	
+	//blog
+	public function blog() {
+        return view('pages.blog');
+	}
+
+	//contact
+	public function ket_noi() {
+        return view('pages.contact');
+	}
+
+	//điều khoản và điều kiện
+	public function dieu_khoan() {
+        return view('pages.dieukhoan');
+	}
+
+	//quyền riêng tư
+	public function quyen_rieng_tu() {
+        return view('pages.quyenriengtu');
+	}
 }

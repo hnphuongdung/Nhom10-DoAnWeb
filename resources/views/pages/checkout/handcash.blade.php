@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +25,9 @@ h1 {
 	color: red;
 }
 </style>
+<br><br><br><br>
 <h1>Thanh toán thành công!</h1>
-<a id="backhome" href="{{URL::to('/trang-chu')}}"><i class="far fa-arrow-alt-circle-left"> Quay lại trang chủ</i></a>
+<br><br><br><br>
 </body>
 </html>
+@endsection
