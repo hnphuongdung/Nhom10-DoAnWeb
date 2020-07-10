@@ -61,6 +61,15 @@ class CategoryProduct extends Controller
     	return Redirect::to('all-category-product');
     }
 
+    public function search_category(request  $request){
+        $keyword = $request->keyword;
+        $search_category = DB::table('tbl_category_product')->where('category_name' , 'like' , '%'. $keyword.'%') ->get();
+
+        return view('admin.search_category')->with('search_category',$search_category);
+
+    }
+
+
     // END Function Admin Page
 
     public function show_category_home( Request $request ,  $category_id){

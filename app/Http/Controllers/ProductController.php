@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Brand;
+use App\Product;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
@@ -32,8 +33,9 @@ class ProductController extends Controller
     	$this -> AuthLogin();
     	$all_product = DB::table('tbl_product')
         ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
-        ->orderby('tbl_product.product_id','desc')->get();
+        ->orderby('tbl_product.product_id','desc')->paginate(7);
         $this ->AuthLogin();
+        //$all_product = DB::table('tbl_product')->paginate(5);
     	$manager_product  = view('admin.all_product')->with('all_product',$all_product);
     	return view('admin_layout')->with('admin.all_product', $manager_product);
 

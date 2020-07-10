@@ -84,6 +84,7 @@
       </table>
     </div>
     <footer class="panel-footer">
+      {{ $all_product->links() }}
     </footer>
   </div>
 </div>
