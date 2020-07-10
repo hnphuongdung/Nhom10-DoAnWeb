@@ -78,7 +78,7 @@
       <div class="media-body">
         <h3 class="heading">Hỗ trợ</h3>
         <span>Luôn tiếp nhận thắc mắc và góp ý</span>
-    </div>
+    </div> 
 </div>      
 </div>
 </div>
@@ -146,11 +146,11 @@
     @foreach($all_product as $key => $product)
      <div class="col-md-6 col-lg-3 ftco-animate">
         <div class="product">
-           <a href="#" class="img-prod"><img class="img-fluid" src="{{URL::to('public/upload/product/'.$product->product_image)}}" alt="Colorlib Template">
+           <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" class="img-prod"><img class="img-fluid" src="{{URL::to('public/upload/product/'.$product->product_image)}}" alt="Colorlib Template">
               <div class="overlay"></div>
           </a>
           <div class="text py-3 pb-4 px-3 text-center">
-              <h3><a href="#">{{$product->product_name}}</a></h3>
+              <h3><a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">{{$product->product_name}}</a></h3>
               <div class="d-flex">
                  <div class="pricing">
                     <p class="price"><span class="price-sale">{{number_format($product->product_price).' '.'VNĐ'}}</span></p>

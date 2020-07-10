@@ -46,7 +46,7 @@
                </a>
                <input type="hidden" id="quantity" name="quantity" value="1">
                <input type="hidden" name="productid_hidden" value="{{$product->product_id}}"> 
-                <button type="submit" style="background-color: #ccab07; border-radius:50%; width:40px; height:40px; border:none; padding-left: 5px"><i class="ion-ios-cart"></i></button>
+                <button type="submit" style="background-color: #ccab07; border-radius:50%; width:40px; height:40px; border:none; padding-left: 5px; color: white"><i class="ion-ios-cart"></i></button>
                </form>
            </div>
        </div>

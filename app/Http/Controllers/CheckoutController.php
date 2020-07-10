@@ -226,6 +226,4 @@ public function view_order($orderId){
             $manager_order  = view('admin.manage_order')->with('all_order',$all_order);
             return view('admin_layout')->with('admin.manage_order', $manager_order);
         }
-        
-
 }
