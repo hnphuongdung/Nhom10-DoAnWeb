@@ -1,5 +1,5 @@
-@extends('show')
-@section('show')
+@extends('layout')
+@section('content')
 <h2 style="margin-left: 20px"> Điều khoản và điều kiện</h2>
 <h4 style="margin-left: 30px"> 1. Giới thiệu</h4>
 <p style="margin-left: 50px">1.1 Chúng tôi là  đơn vị chuyên cung cấp thực phẩm, giao dịch qua trang web www.canteenuit.vn <br><br>

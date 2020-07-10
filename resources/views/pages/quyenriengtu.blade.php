@@ -1,5 +1,5 @@
-@extends('show')
-@section('show')
+@extends('layout')
+@section('content')
 <h2 style="margin-left: 20px"> Chính sách bảo mật</h2>
 <p style="margin-left: 50px">Chúng tôi hiểu rằng những thông tin này rất quan trọng và bảo mật đối với từng khách hàng. Việc bảo mật thông tin của Quý khách là trách nhiệm được chúng tôi đặt lên hàng đầu. Chúng tôi cam kết và luôn nỗ lực hết sức để nhận được sự tin tưởng của Quý khách, đảm bảo quyền lợi và sự kiểm soát của khách hàng.<br><br>
 

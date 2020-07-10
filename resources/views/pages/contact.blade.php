@@ -1,5 +1,5 @@
-@extends('show')
-@section('show')
+@extends('layout')
+@section('content')
 <section class="ftco-section contact-section bg-light">
   <div class="container">
    <div class="row d-flex mb-5 contact-info">

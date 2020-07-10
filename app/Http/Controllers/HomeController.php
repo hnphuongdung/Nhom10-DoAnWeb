@@ -27,27 +27,77 @@ class HomeController extends Controller
     }
 
     //giới thiệu
-    public function about() {
-        return view('pages.about');
+    public function about(Request $Request) {
+        // return view('pages.about');
+        // --SEO
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
+
+    	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
+    	return view('pages.about')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 	
 	//blog
-	public function blog() {
-        return view('pages.blog');
+	public function blog(Request $Request) {
+        // return view('pages.blog');
+        // --SEO
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
+
+    	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
+    	return view('pages.blog')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 
 	//contact
-	public function ket_noi() {
-        return view('pages.contact');
+	public function ket_noi(Request $Request) {
+        // return view('pages.contact');
+        // --SEO
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
+
+    	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
+    	return view('pages.contact')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 
 	//điều khoản và điều kiện
-	public function dieu_khoan() {
-        return view('pages.dieukhoan');
+	public function dieu_khoan(Request $Request) {
+        // return view('pages.dieukhoan');
+        // --SEO
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
+
+    	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
+    	return view('pages.dieukhoan')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 
 	//quyền riêng tư
 	public function quyen_rieng_tu() {
-        return view('pages.quyenriengtu');
+        // return view('pages.quyenriengtu');
+        // --SEO
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
+
+    	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
+    	return view('pages.quyentiengtu')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 }
