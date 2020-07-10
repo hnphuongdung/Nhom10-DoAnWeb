@@ -27,4 +27,5 @@
    <h4 style="margin-left: 30px">6. Sửa đổi trong các Điều khoản và Điều kiện chung</h4>
    <p style="margin-left: 50px">Chúng tôi có quyền sửa đổi các Điều Khoản và Điều Kiện này vào bất kỳ thời điểm nào. Các sửa đổi đó sẽ được đăng trên mạng. Tuy nhiên, việc tiếp tục sử dụng trang Web sẽ được coi như là quý khách đã chấp nhận các Điều Khoản và Điều Kiện mới đó.</p>
  </p>
+ <br><br>
 @endsection

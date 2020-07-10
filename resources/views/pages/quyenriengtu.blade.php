@@ -72,4 +72,5 @@ Chúng tôi cũng thu thập các thông tin về trình duyệt web (browser) m
 
  Để tìm hiểu thông tin về dịch vụ, chính sách của Canteen UIT, Quý khách vui lòng truy cập trang Điều Khoản Sử Dụng của chúng tôi để biết thêm thông tin.</p>
 </p>
+<br><br>
 @endsection
