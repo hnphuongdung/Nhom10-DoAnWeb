@@ -3,7 +3,7 @@
         <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Liệt kê danh mục
+      KẾT QUẢ TÌM KIẾM
     </div>
     <div class="row w3-res-tb">
       {{-- <div class="col-sm-5 m-b-xs">
@@ -53,7 +53,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($all_category_product as $key => $cate_pro)
+          @foreach($search_category as $key => $cate_pro)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$cate_pro->category_name}}</td>

@@ -160,7 +160,7 @@
              <div class="m-auto d-flex">
               <form action="{{URL::to('/save-cart')}}" method="POST" style="display:flex">
               {{csrf_field()}}
-                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" style="margin-right: 5px" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                    <span><i class="ion-ios-menu"></i></span>
                </a>
                <input type="hidden" id="quantity" name="quantity" value="1">
@@ -185,14 +185,14 @@
          <span class="subheading">Giá tốt cho bạn</span>
          <h2 class="mb-4">Combo tiết kiệm</h2>
          <p>Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!</p>
-         <h3><a href="combo.html">Combo bữa trưa ngon miệng</a></h3>
-         <span class="price">25.000 VNĐ</span>
-         <div id="timer" class="d-flex mt-5">
+         <h3><a href="combo.html">Chỉ từ 25.000VND</a></h3>
+         {{-- <span class="price">25.000 VNĐ</span> --}}
+         {{-- <div id="timer" class="d-flex mt-5">
             <div class="time" id="days"></div>
             <div class="time pl-3" id="hours"></div>
             <div class="time pl-3" id="minutes"></div>
             <div class="time pl-3" id="seconds"></div>
-        </div>
+        </div> --}}
     </div>
 </div>      
 </div>

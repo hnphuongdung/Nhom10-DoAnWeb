@@ -36,6 +36,8 @@ Route::get('/all-category-product','CategoryProduct@all_category_product');
 Route::get('/active-category-product/{category_product_id}','CategoryProduct@active_category_product');
 Route::get('/unactive-category-product/{category_product_id}','CategoryProduct@unactive_category_product');
 Route::post('/save-category-product','CategoryProduct@save_category_product');
+Route::post('/search-category','CategoryProduct@search_category');
+
 Route::post('/update-category-product/{category_product_id}','CategoryProduct@update_category_product');
 
 //Product

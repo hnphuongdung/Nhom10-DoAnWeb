@@ -49,7 +49,7 @@ class CategoryProduct extends Controller
     public function update_category_product(Request $request,$category_product_id){
     	$data = array();
     	$data['category_name']=$request->category_name;
-        $data['meta_keyword']=$request->category_product_keyword;
+        $data['meta_keywords']=$request->category_product_keyword;
     	$data['category_desc']=$request->category_desc;
     	DB::table('tbl_category_product')->where('category_id',$category_product_id)->update($data);
     	Session::put('message','Cập nhật danh mục sản phẩm thành công');
@@ -61,6 +61,15 @@ class CategoryProduct extends Controller
     	return Redirect::to('all-category-product');
     }
 
+    public function search_category(request  $request){
+        $keyword = $request->keyword;
+        $search_category = DB::table('tbl_category_product')->where('category_name' , 'like' , '%'. $keyword.'%') ->get();
+
+        return view('admin.search_category')->with('search_category',$search_category);
+
+    }
+
+
     // END Function Admin Page
 
     public function show_category_home( Request $request ,  $category_id){
@@ -71,14 +80,14 @@ class CategoryProduct extends Controller
         $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
 
         $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')->where('tbl_product.category_id', $category_id)->get();
-        // foreach ($category_by_id as $key => $val ) {
+        foreach ($category_by_id as $key => $val ) {
             // --SEO
-            // $meta_desc = $val->category_desc;
-            // $meta_keywords = $val->meta_keywords;
-            // $meta_title = $val->category_name;
-            // $url_canonical = $request->url();
+            $meta_desc = $val->category_desc;
+            $meta_keywords = $val->meta_keywords;
+            $meta_title = $val->category_name;
+            $url_canonical = $request->url();
         // --End SEO
-        // }
+        }
        return view('pages.category.show_category')->with('category', $cate_product)->with('category_by_id', $category_by_id);
 }
 }
