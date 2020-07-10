@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 //Frontend
 Route::get('/','HomeController@index');
 Route::get('/trang-chu','HomeController@index');
+Route::get('/gioi-thieu','HomeController@about');
 
 // Danh mục sản phẩm - trang chủ
 Route::get('/danh-muc-san-pham/{category_id}','CategoryProduct@show_category_home');

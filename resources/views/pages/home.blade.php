@@ -158,14 +158,14 @@
             </div>
             <div class="bottom-area d-flex px-3">
              <div class="m-auto d-flex">
-              <form action="{{URL::to('/save-cart')}}" method="POST">
+              <form action="{{URL::to('/save-cart')}}" method="POST" style="display:flex">
               {{csrf_field()}}
                 <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                    <span><i class="ion-ios-menu"></i></span>
                </a>
                <input type="hidden" id="quantity" name="quantity" value="1">
                <input type="hidden" name="productid_hidden" value="{{$product->product_id}}"> 
-                <i class="ion-ios-cart"></i><input type="submit" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                <button type="submit" style="background-color: #ccab07; border-radius:50%; width:40px; height:40px; border:none; padding-left: 5px; color: white"><i class="ion-ios-cart"></i></button>
                </form>
            </div>
        </div>

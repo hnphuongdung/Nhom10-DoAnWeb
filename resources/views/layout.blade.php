@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
   <link rel="stylesheet" href="{{asset('public/frontend/css/open-iconic-bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('public/frontend/css/animate.css')}}">
@@ -43,7 +44,7 @@
         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
         <span class="text">Canteen@gm.uit.edu.vn</span>
       </div>
-      <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+      <div style="color: #ccab07; padding-left: 15px; margin-left: 100px;" class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 
         <?php
         $customer_id = Session::get('customer_id');
@@ -51,11 +52,13 @@
         if($customer_id!=NULL){ 
            $customername = DB::table('tbl_customers')->where('customer_id', $customer_id)->get()[0]->customer_name;
           ?>
-          {{-- <a href="{{URL::to('/logout-checkout')}}" class="text">Đăng xuất</a> --}}
-          <select> 
-            <option><span><?php echo $customername; ?></span></option>
-            <option><a href="{{URL::to('/logout-checkout')}}" class="text">Đăng xuất</a></option>
-          </select>
+          <i class="fas fa-user"></i>
+          <?php echo $customername; ?>
+          <a style="width: 100px" href="{{URL::to('/logout-checkout')}}" class="text">| Đăng xuất</a>
+          {{-- <ul class="nav-item dropdown">
+            <li class="text nav-link dropdown-toggl" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Xin chào, <?php echo $customername; ?></li>
+            <li><a href="{{URL::to('/logout-checkout')}}" class="text" class="dropdown-menu" aria-labelledby="dropdown04">Đăng xuất</a></li>
+          </ul> --}}
           <?php
         }else{
          ?>

@@ -25,4 +25,9 @@ class HomeController extends Controller
     	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
     	return view('pages.home')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
     }
+
+    //giới thiệu
+    public function about() {
+        return view('pages.about');
+    }
 }
