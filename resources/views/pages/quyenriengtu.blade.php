@@ -62,13 +62,13 @@ Chúng tôi cũng thu thập các thông tin về trình duyệt web (browser) m
 
     Thoát khỏi hệ thống, tắt các trình duyệt trên máy tính không sử dụng, kể cả trường hợp dừng truy cập trong thời gian ngắn. Nếu dùng máy tính chung với nhiều người, Quý khách nên đăng xuất và thoát toàn bộ cửa sổ website đang mở, đồng thời tránh lưu mật khẩu trên trình duyệt.<br><br>
 
-  Nếu nghi ngờ mật khẩu bị lộ hoặc có người truy cập trái phép tài khoản, Quý khách nên đặt lại mật khẩu ngay lập tức. Trong trường hợp cần thiết, Quý khách lập tức thông báo và đề nghị hỗ trợ từ Ban quản trị website của Nhà hàng MAISON qua hotline hoặc website này.</p>
+  Nếu nghi ngờ mật khẩu bị lộ hoặc có người truy cập trái phép tài khoản, Quý khách nên đặt lại mật khẩu ngay lập tức. Trong trường hợp cần thiết, Quý khách lập tức thông báo và đề nghị hỗ trợ từ Ban quản trị website của Canteen UIT qua hotline hoặc website này.</p>
   <h4 style="margin-left: 30px">5. Quy định về "spam"</h4>
-  <p style="margin-left: 50px">Thư rác (spam) là các email giả mạo danh tín Nhà hàng MAISON gửi đến hòm thư của Quý khách hàng khi chưa có sự yêu cầu của Quý khách. Nhà hàng MAISON khẳng định: Chỉ gửi email liên quan đến nội dung Quý khách quan tâm khi và chỉ khi Quý khách đã đăng ký nhận thông tin hoặc sử dụng dịch vụ của chúng tôi.<br><br>
+  <p style="margin-left: 50px">Thư rác (spam) là các email giả mạo danh tín Canteen UIT gửi đến hòm thư của Quý khách hàng khi chưa có sự yêu cầu của Quý khách. Canteen UIT khẳng định: Chỉ gửi email liên quan đến nội dung Quý khách quan tâm khi và chỉ khi Quý khách đã đăng ký nhận thông tin hoặc sử dụng dịch vụ của chúng tôi.<br><br>
 
-   MAISON cam kết không bán, không thuê lại hoặc cho thuê địa chỉ email của Quý khách cho bên thứ ba. Nếu vô tình nhận được một email không theo yêu cầu từ hệ thống, mong Quý khách thông cảm và hiểu đó là do một nguyên nhân ngoài ý muốn.<br><br>
+   Canteen UIT cam kết không bán, không thuê lại hoặc cho thuê địa chỉ email của Quý khách cho bên thứ ba. Nếu vô tình nhận được một email không theo yêu cầu từ hệ thống, mong Quý khách thông cảm và hiểu đó là do một nguyên nhân ngoài ý muốn.<br><br>
 
-   MAISON thành thật xin lỗi vì sự bất tiện ấy và mong Quý khách vui lòng nhấn vào link từ chối nhận email trong email hoặc thông báo trực tiếp đến chúng tôi. Lưu ý: Nhà hàng MAISON chỉ sử dụng một tài khoản Email chính tại địa chỉ: canteen@gm.uit.edu.vn<br><br>
+   Canteen UIT thành thật xin lỗi vì sự bất tiện ấy và mong Quý khách vui lòng nhấn vào link từ chối nhận email trong email hoặc thông báo trực tiếp đến chúng tôi. Lưu ý: Canteen UIT chỉ sử dụng một tài khoản Email chính tại địa chỉ: canteen@gm.uit.edu.vn<br><br>
 
  Để tìm hiểu thông tin về dịch vụ, chính sách của Canteen UIT, Quý khách vui lòng truy cập trang Điều Khoản Sử Dụng của chúng tôi để biết thêm thông tin.</p>
 </p>

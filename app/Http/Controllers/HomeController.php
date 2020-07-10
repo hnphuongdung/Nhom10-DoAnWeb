@@ -87,7 +87,7 @@ class HomeController extends Controller
 	}
 
 	//quyền riêng tư
-	public function quyen_rieng_tu() {
+	public function quyen_rieng_tu(Request $Request) {
         // return view('pages.quyenriengtu');
         // --SEO
 		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
@@ -98,6 +98,6 @@ class HomeController extends Controller
     	$cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
 
     	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
-    	return view('pages.quyentiengtu')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
+    	return view('pages.quyenriengtu')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
 	}
 }
