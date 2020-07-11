@@ -36,7 +36,14 @@
             <td><i>{{$i}}</i></label></td>
             <td>{{$or->order_id}}</td>
             <td>{{$or->order_total}}</td>
-            <td>{{$or->order_status}}</td>
+            <td>@if($or->order_status == 1)
+                  Đang chờ xử lý
+                @elseif($or->order_status == 2)
+                  Đã xử lý
+                @else 
+                  Hủy đơn hàng
+                @endif
+            </td>
             <td>
               <a href="{{URL::to('/view-order/'.$or->order_code)}}" class="active" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
