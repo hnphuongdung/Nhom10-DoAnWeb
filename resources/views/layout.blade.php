@@ -90,7 +90,7 @@
       <li class="nav-item"><a href="{{URL::to('/gioi-thieu')}}" class="nav-link">Giới thiệu</a></li>
       <li class="nav-item"><a href="{{URL::to('/blog')}}" class="nav-link">Blog</a></li>
       <li class="nav-item"><a href="{{URL::to('/ket-noi')}}" class="nav-link">Liên hệ</a></li>
-      <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>Xem giỏ hàng</a></li>
+      <li class="nav-item cta cta-colored"><a href="{{URL::to('/show-cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Cart::count()}}]</a></li>
 
     </ul>
   </div>
