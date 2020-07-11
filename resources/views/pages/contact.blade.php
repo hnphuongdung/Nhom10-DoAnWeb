@@ -1,6 +1,8 @@
 @extends('layout')
 @section('content')
 <section class="ftco-section contact-section bg-light">
+  <div class="panel-body">
+                                    
   <div class="container">
    <div class="row d-flex mb-5 contact-info">
     <div class="w-100"></div>
@@ -25,24 +27,32 @@
      </div>
    </div>
  </div>
+
+ 
  <div class="row block-9">
   <div class="col-md-6 order-md-last d-flex">
-    <form action="#" class="bg-white p-5 contact-form">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Họ Và Tên ">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Email">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Chủ Đề">
-      </div>
-      <div class="form-group">
-        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Tin Nhắn"></textarea>
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Gửi Tin Nhắn" class="btn btn-primary py-3 px-5">
-      </div>
+  
+    <form action="{{URL::to('/save-contact')}}" method = "POST"class="bg-white p-5 contact-form">
+      @csrf
+    <?php
+                                    $message = Session::get('message');
+                                    if($message){
+                                    echo '<span class="text-alert">', $message,'</span>';
+                                    Session::put('message',null);
+
+                                    }
+                                    ?>
+        <input type="text" name= "name" class="form-group form-control" placeholder="Họ Và Tên ">
+      
+      
+        <input type="text" name = "email"class="form-group form-control" placeholder="Email">
+      
+        <input type="text" name = "subject"class="form-group form-control" placeholder="Chủ Đề">
+      
+        <textarea name="mess" id="" cols="30" rows="7" class="form-group form-control" placeholder="Tin Nhắn"></textarea>
+     
+        <input type="submit" name = "send_mess"value="Gửi Tin Nhắn" class="form-group btn btn-primary py-3 px-5">
+      
     </form>
 
   </div>

@@ -21,6 +21,9 @@ Route::get('/ket-noi','HomeController@ket_noi');
 Route::get('/dieu-khoan','HomeController@dieu_khoan');
 Route::get('/quyen-rieng-tu','HomeController@quyen_rieng_tu');
 
+
+Route::post('/save-contact','HomeController@save_contact');
+
 // Danh mục sản phẩm - trang chủ
 Route::get('/danh-muc-san-pham/{category_id}','CategoryProduct@show_category_home');
 Route::get('/chi-tiet-san-pham/{product_id}','ProductController@details_product');

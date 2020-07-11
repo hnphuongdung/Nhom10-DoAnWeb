@@ -69,6 +69,26 @@ class HomeController extends Controller
 
     	$all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->limit(4)->get();
     	return view('pages.contact')->with('category', $cate_product)->with('all_product', $all_product)->with('meta_desc',$meta_desc)->with('meta_keywords',$meta_keywords)->with('meta_title',$meta_title)->with('url_canonical',$url_canonical);
+
+	}
+
+	public function save_contact(Request $Request)
+	{
+		$meta_desc="Canteen UIT - Ăn mà ngại thì chỉ có hại cho bao tử mà thôi!" ;
+		$meta_keywords="CanteenUIT, đồ ăn UIT, thức ăn UIT";
+		$meta_title="Chào mừng bạn đến với canteen UIT";
+		$url_canonical = $Request->url();
+		// --End SEO
+    	 //$this -> AuthLogin();
+    	$data = array();
+    	$data['name']=$Request->name;
+        $data['email']=$Request->email;
+    	$data['subject']=$Request->subject;
+    	$data['mess']=$Request->mess;
+
+    	DB::table('tbl_fedback')->insert($data);
+    	Session::put('message','Gửi tin nhắn thành công, chúng tôi sẽ sớm phản hồi tới bạn');
+    	return Redirect::to('ket-noi');
 	}
 
 	//điều khoản và điều kiện

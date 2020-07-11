@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblCustomer extends Migration
+class TblFedback extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class TblCustomer extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_customers', function (Blueprint $table) {
-            $table->Increments('customer_id');
-            $table->string('customer_name');
-            $table->string('customer_email');
-            $table->string('customer_password');
-            $table->string('customer_phone');
+         Schema::create('tbl_fedback', function (Blueprint $table) {
+            $table->Increments('fedback_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('subject');
+            $table->string('mess');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class TblCustomer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_customers');
+        //
     }
 }
