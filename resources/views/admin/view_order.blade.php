@@ -85,9 +85,13 @@
           </td>
             <td>{{$details->product_price}}</td>
             <td>{{$details->product_price*$details->product_sales_quantity}}</td>
+            <td>{{number_format($details->product_price,0,',',',')}}đ</td>
+            <td>{{number_format($subtotal,0,',',',')}}đ</td>
           </tr>
           @endforeach
           <tr>
+            <td>Thanh toán: {{number_format($total,0,',',',')}}đ</td>
+          </tr>
             <td>
               <select class="form_control">
                 <option value="Đang chờ xử lý">Đang chờ xử lý</option>
