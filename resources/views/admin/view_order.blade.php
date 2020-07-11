@@ -38,7 +38,6 @@
     <div class="panel-heading">
       Liệt kê chi tiết đơn hàng
     </div>
-      
     
     <div class="table-responsive">
       <?php
@@ -80,8 +79,7 @@
             <td><i>{{$i}}</i></label></td>
             <td>{{$details->product_name}}</td>
             <td>{{$details->product_quantity}}</td> 
-            <td><input type="number" min="1" value="{{$details->product_sales_quantity}}" name="product_sales_quantity">
-            <button type="submit" name="update_sales_quantity" class="btn btn-info">Cập nhật số lượng</button>
+            <td>{{$details->product_sales_quantity}}
           </td>
             <td>{{$details->product_price}}</td>
             <td>{{$details->product_price*$details->product_sales_quantity}}</td>
@@ -104,18 +102,6 @@
       </table>
     </div>
     <footer class="panel-footer">
-      <div class="row">
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </footer>
   </div>
 </div>

@@ -40,8 +40,8 @@
             <td>
               <a href="{{URL::to('/view-order/'.$or->order_code)}}" class="active" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
-                <a onclick="return confirm('Bạn có muốn xóa đơn hàng không?')" href="{{URL::to('/delete-order/'.$or->order_code)}}" class="active" ui-toggle-class="">    
-                </i><i class="fa fa-times text-danger text"></i></a>
+                {{-- <a onclick="return confirm('Bạn có muốn xóa đơn hàng không?')" href="{{URL::to('/delete-order/'.$or->order_code)}}" class="active" ui-toggle-class="">    
+                </i><i class="fa fa-times text-danger text"></i></a> --}}
               </td>
             </tr>
             @endforeach
