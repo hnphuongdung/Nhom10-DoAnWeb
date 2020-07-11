@@ -128,7 +128,6 @@ public function view_order($orderId){
     ->join('tbl_order_details','tbl_order.order_id','=','tbl_order_details.order_id')
     ->join('tbl_product','tbl_order_details.product_id', '=', 'tbl_product.product_id')
     ->select('tbl_order.*','tbl_customers.*','tbl_order_details.*','tbl_product.*')->first();
-
      $manager_order_by_id  = view('admin.view_order')->with('order_by_id',$order_by_id);
 
     return view('admin_layout')->with('admin.view_order', $manager_order_by_id);
@@ -197,7 +196,8 @@ public function view_order($orderId){
         $order_data['customer_id'] = Session::get('customer_id');
         //$order_data['payment_id'] = $payment_id;
         $order_data['order_total'] = Cart::subtotal();
-        $order_data['order_status'] = 'Đang chờ xử lý';
+        $order_data['order_status'] = '1';
+        $order_data['order_code'] = substr(md5(microtime()),rand(0,26),5);
         $order_id = DB::table('tbl_order')->insertGetId($order_data);
 
         //insert order_details
@@ -208,6 +208,7 @@ public function view_order($orderId){
             $order_d_data['product_name'] = $v_content->name;
             $order_d_data['product_price'] = $v_content->price;
             $order_d_data['product_sales_quantity'] = $v_content->qty;
+            $order_d_data['order_code'] = $order_data['order_code'];
             DB::table('tbl_order_details')->insert($order_d_data);
         }
             $request->payment_option;

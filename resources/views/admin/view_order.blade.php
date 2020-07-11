@@ -23,8 +23,8 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{$order_by_id->customer_name}}</td>
-            <td>{{$order_by_id->customer_phone}}</td>
+            <td>{{$customer->customer_name}}</td>
+            <td>{{$customer->customer_phone}}</td>
           </tr>
 
         </tbody>
@@ -65,18 +65,28 @@
           </tr>
         </thead>
         <tbody>
+           @php 
+          $i = 0;
+          $total = 0;
+          @endphp
+        @foreach($order_details as $key => $details)
 
+          @php 
+          $i++;
+          $subtotal = $details->product_price*$details->product_sales_quantity;
+          $total+=$subtotal;
+          @endphp
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>{{$order_by_id->product_name}}</td>
-            <td>{{$order_by_id->product_quantity}}</td> 
-            <td><input type="number" min="1" value="{{$order_by_id->product_sales_quantity}}" name="product_sales_quantity">
+            <td><i>{{$i}}</i></label></td>
+            <td>{{$details->product_name}}</td>
+            <td>{{$details->product_quantity}}</td> 
+            <td><input type="number" min="1" value="{{$details->product_sales_quantity}}" name="product_sales_quantity">
             <button type="submit" name="update_sales_quantity" class="btn btn-info">Cập nhật số lượng</button>
           </td>
-            <td>{{$order_by_id->product_price}}</td>
-            <td>{{$order_by_id->product_price*$order_by_id->product_sales_quantity}}</td>
+            <td>{{$details->product_price}}</td>
+            <td>{{$details->product_price*$details->product_sales_quantity}}</td>
           </tr>
-          
+          @endforeach
           <tr>
             <td>
               <select class="form_control">

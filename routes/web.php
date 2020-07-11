@@ -87,5 +87,7 @@ Route::get('/checkout','CheckoutController@checkout');
 //Route::post('/confirm-order','CheckoutController@confirm_order');
 
 //order
-Route::get('/manage-order','CheckoutController@manage_order');
-Route::get('/view-order/{order_Id}','CheckoutController@view_order');
+// Route::get('/manage-order','CheckoutController@manage_order');
+// Route::get('/view-order/{order_Id}','CheckoutController@view_order');
+Route::get('/manage-order/', 'OrderController@manage_order');
+Route::get('/view-order/{order_code}/','OrderController@view_order');
