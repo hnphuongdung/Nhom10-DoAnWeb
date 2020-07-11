@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
+use App\Brand;
+use App\Product;
 use Session;
 use Illuminate\Support\Facades\Redirect;
+use Cart;
 session_start();
-
 class CategoryProduct extends Controller
 {
     public function add_category_product(){
@@ -79,7 +81,7 @@ class CategoryProduct extends Controller
 
         $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
 
-        $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')->where('tbl_product.category_id', $category_id)->get();
+        $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')->where('tbl_product.category_id', $category_id)->paginate(12);
         foreach ($category_by_id as $key => $val ) {
             // --SEO
             $meta_desc = $val->category_desc;
@@ -88,6 +90,7 @@ class CategoryProduct extends Controller
             $url_canonical = $request->url();
         // --End SEO
         }
+
        return view('pages.category.show_category')->with('category', $cate_product)->with('category_by_id', $category_by_id);
 }
 }

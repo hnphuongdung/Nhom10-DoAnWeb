@@ -52,9 +52,14 @@
        </div>
    </div>
 </div>
+
 </div>
+
+
 @endforeach
 </div>
 </div>
+
+{{ $category_by_id->links() }}
 </section>
 @endsection
