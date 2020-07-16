@@ -13,8 +13,8 @@ class TblFedback extends Migration
      */
     public function up()
     {
-         Schema::create('tbl_fedback', function (Blueprint $table) {
-            $table->Increments('fedback_id');
+         Schema::create('tbl_feedback', function (Blueprint $table) {
+            $table->Increments('feedback_id');
             $table->string('name');
             $table->string('email');
             $table->string('subject');

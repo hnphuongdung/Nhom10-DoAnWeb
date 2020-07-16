@@ -86,7 +86,7 @@ class HomeController extends Controller
     	$data['subject']=$Request->subject;
     	$data['mess']=$Request->mess;
 
-    	DB::table('tbl_fedback')->insert($data);
+    	DB::table('tbl_feedback')->insert($data);
     	Session::put('message','Gửi tin nhắn thành công, chúng tôi sẽ sớm phản hồi tới bạn');
     	return Redirect::to('ket-noi');
 	}
