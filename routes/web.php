@@ -20,6 +20,7 @@ Route::get('/blog','HomeController@blog');
 Route::get('/ket-noi','HomeController@ket_noi');
 Route::get('/dieu-khoan','HomeController@dieu_khoan');
 Route::get('/quyen-rieng-tu','HomeController@quyen_rieng_tu');
+Route::GET('/search','HomeController@search');
 
 
 Route::post('/save-contact','HomeController@save_contact');

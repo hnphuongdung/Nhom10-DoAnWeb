@@ -75,16 +75,26 @@
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
      <span class="oi oi-menu"></span> Menu
    </button>
-
+    
+   <div style=" margin-top:20px;   "class="col-md-4 d-flex align-items-center">
+    <form method = "GET" action="{{URL::to('/search')}}"  class="search" >
+      {{csrf_field()}}
+      <div class="form-group d-flex">
+        <input style="border:none" type="text" class=" form-control1 text" name = "keyword" placeholder="Từ khóa">
+        <button type="submit" class= "submit px-2 " style="border: 1px solid #fff; background-color: #fff"> <i class="fas fa-search" style=" color:#ccab07; " ></i> </button>
+        
+      </div>
+    </form>
+  </div>
    <div class="collapse navbar-collapse" id="ftco-nav">
      <ul class="navbar-nav ml-auto">
        <li class="nav-item active"><a href="{{URL::to('/trang-chu')}}" class="nav-link">Trang chủ</a></li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
-          @foreach($category as $key => $cate)
+         @foreach($category as $key => $cate)
           <a class="dropdown-item" href="{{URL::to('/danh-muc-san-pham/'.$cate->category_id)}}">{{$cate->category_name}}</a>
-          @endforeach
+          @endforeach 
         </div>
       </li>
       <li class="nav-item"><a href="{{URL::to('/gioi-thieu')}}" class="nav-link">Giới thiệu</a></li>
