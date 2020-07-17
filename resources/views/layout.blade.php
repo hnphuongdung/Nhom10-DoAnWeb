@@ -69,14 +69,14 @@
 </div>
 </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="height: 70px">
  <div class="container">
    <a class="navbar-brand" href="{{URL::to('/trang-chu')}}">Canteen UIT</a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
      <span class="oi oi-menu"></span> Menu
    </button>
     
-   <div style=" margin-top:20px;   "class="col-md-4 d-flex align-items-center">
+   <div style=" margin-top:20px;margin-bottom: 20px "class="col-md-4 d-flex align-items-center">
     <form method = "GET" action="{{URL::to('/search')}}"  class="search" >
       {{csrf_field()}}
       <div class="form-group d-flex">

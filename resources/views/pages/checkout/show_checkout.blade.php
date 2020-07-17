@@ -24,6 +24,47 @@
     						<span>{{Cart::subtotal().' '.'VNĐ'}}</span>
  							</p>
   							<p class="d-flex">
+  								@if(Session::get('coupon'))
+    <span>Mã giảm</span>
+    @foreach(Session::get('coupon') as $key =>$cou)
+    @if($cou['coupon_condition']==1)
+    @php 
+    echo '<span>'.$cou['coupon_numbers'].'%</span> </p>'; 
+    echo '<p class="d-flex">
+    <span>Tổng giảm</span>';
+    $total =(int)Cart::subtotal() *1000;
+
+    $coupon_numbers = (int)$cou['coupon_numbers'];
+    (int)$total_coupon = $total*$coupon_numbers/100;
+    echo '<span>'.$total_coupon.' VNĐ </span>';
+
+    echo' <hr><p class="d-flex total-price">
+    <span>Thành tiền</span>';
+    (int)$result = $total - $total_coupon;
+    echo '<span>'.$result.' VNĐ </span> </p>' ;
+    @endphp
+    @else 
+    @php 
+    echo '<span>'.$cou['coupon_numbers'].' VNĐ</span> </p>'; 
+            // echo '<p class="d-flex">
+            //       <span>Tổng giảm</span>';
+    $total =(int)Cart::subtotal() *1000;
+
+    $coupon_numbers = (int)$cou['coupon_numbers'];
+            // (int)$total_coupon = $total-$coupon_numbers/100;
+            //echo '<span>'.$total_coupon.' VNĐ </span>';
+
+    echo' <hr><p class="d-flex total-price">
+    <span>Thành tiền</span>';
+    (int)$result = $total - $coupon_numbers;
+    echo '<span>'.$result.' VNĐ </span> </p>' ;
+    @endphp
+
+
+    @endif
+    @endforeach
+    @else
+    <p class="d-flex">
     						<span>Giảm giá</span>
     						<span>{{Cart::discount().' '.'VNĐ'}}</span>
   							</p>
@@ -33,7 +74,7 @@
     						<span>{{Cart::subtotal().' '.'VNĐ'}}</span>
   							</p>
 						</div>
-
+@endif
 						<div class="col-md-12">
 							<div class="cart-detail p-3 p-md-4">
 								<h3 class="billing-heading mb-4">Phương Thức Thanh Toán</h3>

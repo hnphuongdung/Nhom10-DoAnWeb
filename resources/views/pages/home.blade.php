@@ -160,7 +160,7 @@
              <div class="m-auto d-flex">
               <form action="{{URL::to('/save-cart')}}" method="POST" style="display:flex">
               {{csrf_field()}}
-                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" style="margin-right: 5px" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}" style="margin-right: 5px; margin-top: 20px" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                    <span><i class="ion-ios-menu"></i></span>
                </a>
                <input type="hidden" id="quantity" name="quantity" value="1">
