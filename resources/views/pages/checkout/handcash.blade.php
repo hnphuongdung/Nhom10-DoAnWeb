@@ -34,7 +34,7 @@ h1 i {
 </style>
 <br><br><br><br>
 <h1>Đặt món thành công! Chúc bạn ngon miệng <i class="fas fa-heart"></i></h1> 
-
+<p>Mã đơn hàng: {{$ord}}</p>
 <br><br><br><br>
 </body>
 </html>

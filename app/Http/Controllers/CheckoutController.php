@@ -215,7 +215,14 @@ public function view_order($orderId){
             Cart::destroy();
             $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id','desc')->get();
             $all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id','desc')->get();
-            return view('pages.checkout.handcash')->with('category', $cate_product)->with('all_product', $all_product);
+            $ord = DB::table('tbl_order')->get();
+            foreach ($ord as $value) {
+                if($value->order_total != 0)
+                $ord_id = $value->order_id;
+                else 
+                    break;
+            }
+            return view('pages.checkout.handcash')->with('category', $cate_product)->with('all_product', $all_product)->with('ord', $ord_id);
         }
         
         public function manage_order() {
@@ -227,4 +234,8 @@ public function view_order($orderId){
             $manager_order  = view('admin.manage_order')->with('all_order',$all_order);
             return view('admin_layout')->with('admin.manage_order', $manager_order);
         }
+    //     public function payment_success(){
+    //     $order = Order::orderby('order_id')->get();
+    //     return view('pae')->with(compact('order'));
+    // }
 }
